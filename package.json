@@ -1,0 +1,25 @@
+{
+  "name": "marcao-wa-experiment",
+  "version": "0.0.10",
+  "description": "Runs K-Fold cross validation on Watson Assistant Skill.",
+  "main": "lib/index.js",
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.0",
+    "ibm-watson": "^5.6.0",
+    "lodash": "^4.17.19",
+    "simple-statistics": "^7.1.0"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
+  },
+  "scripts": {
+    "test": "jest --collectCoverage"
+  },
+  "bin": {
+    "marcao-wa-experiment": "bin/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
