@@ -1,5 +1,5 @@
 TN:
-SF:/Users/mbigelli/projects/marcones-tools/lib/assistant.js
+SF:lib/assistant.js
 FN:12,(anonymous_0)
 FN:24,(anonymous_1)
 FN:26,(anonymous_2)
@@ -152,7 +152,7 @@ BRF:32
 BRH:32
 end_of_record
 TN:
-SF:/Users/mbigelli/projects/marcones-tools/lib/experiment-analysis.js
+SF:lib/experiment-analysis.js
 FN:4,classDistribution
 FN:6,(anonymous_1)
 FN:9,precisionAtK
@@ -247,7 +247,7 @@ BRF:9
 BRH:9
 end_of_record
 TN:
-SF:/Users/mbigelli/projects/marcones-tools/lib/utils.js
+SF:lib/utils.js
 FN:1,pollingAwait
 FN:3,(anonymous_1)
 FNF:2

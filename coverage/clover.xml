@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1594409466520" clover="3.2.0">
-  <project timestamp="1594409466520" name="All files">
+<coverage generated="1594410604915" clover="3.2.0">
+  <project timestamp="1594410604915" name="All files">
     <metrics statements="92" coveredstatements="92" conditionals="47" coveredconditionals="47" methods="53" coveredmethods="53" elements="192" coveredelements="192" complexity="0" loc="92" ncloc="92" packages="1" files="3" classes="3"/>
     <file name="assistant.js" path="/Users/mbigelli/projects/marcones-tools/lib/assistant.js">
       <metrics statements="60" coveredstatements="60" conditionals="32" coveredconditionals="32" methods="26" coveredmethods="26"/>
