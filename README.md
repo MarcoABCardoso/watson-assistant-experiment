@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to marcao-wa-experiment 👋</h1>
+<h1 align="center">marcao-wa-experiment</h1>
 <p>
   <a href="https://www.npmjs.com/package/marcao-wa-experiment" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/marcao-wa-experiment.svg">
@@ -13,13 +13,14 @@
 ## Install
 
 ```sh
-npm install
+npm install -g marcao-wa-experiment
 ```
 
 ## Usage
 
+CLI:
 ```sh
-marcao-wa-experiment
+> marcao-wa-experiment
 
 Marcão Experiment Script
 
@@ -38,6 +39,18 @@ Options
 Output
 
   Experiment results in JSON format
+```
+
+As a module:
+```js
+const { Assistant } = require('marcao-wa-experiment')
+const assistant = new Assistant({ 
+  version: '2020-07-01', 
+  apikey: 'YOUR_WATSON_ASSISTANT_API_KEY', 
+  url: 'YOUR_WATSON_ASSISTANT_SERVICE_URL'
+})
+
+let results = await assistant.runExperiment('TARGET_WORKSPACE_ID', 3)
 ```
 
 ## Run tests
