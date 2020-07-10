@@ -8364,53 +8364,43 @@
         "precision_at_k": [
             {
                 "k": 0,
-                "precision": 0.8743718592964824,
-                "stdDev": 0.33142979794655497
+                "precision": 0.8743718592964824
             },
             {
                 "k": 1,
-                "precision": 0.9597989949748744,
-                "stdDev": 0.1964303546300712
+                "precision": 0.9597989949748744
             },
             {
                 "k": 2,
-                "precision": 0.9849246231155779,
-                "stdDev": 0.12185282063298629
+                "precision": 0.9849246231155779
             },
             {
                 "k": 3,
-                "precision": 0.9899497487437185,
-                "stdDev": 0.09974589568481988
+                "precision": 0.9899497487437185
             },
             {
                 "k": 4,
-                "precision": 0.9899497487437185,
-                "stdDev": 0.09974589568481988
+                "precision": 0.9899497487437185
             },
             {
                 "k": 5,
-                "precision": 0.9899497487437185,
-                "stdDev": 0.09974589568481988
+                "precision": 0.9899497487437185
             },
             {
                 "k": 6,
-                "precision": 0.9899497487437185,
-                "stdDev": 0.09974589568481988
+                "precision": 0.9899497487437185
             },
             {
                 "k": 7,
-                "precision": 0.9899497487437185,
-                "stdDev": 0.09974589568481988
+                "precision": 0.9899497487437185
             },
             {
                 "k": 8,
-                "precision": 0.9949748743718593,
-                "stdDev": 0.0707097853239715
+                "precision": 0.9949748743718593
             },
             {
                 "k": 9,
-                "precision": 0.9949748743718593,
-                "stdDev": 0.0707097853239715
+                "precision": 0.9949748743718593
             }
         ],
         "class_accuracy": [
@@ -8418,64 +8408,55 @@
                 "intent": "Goodbye",
                 "count": 6,
                 "k": 0,
-                "precision": 0.6666666666666666,
-                "stdDev": 0.4714045207910317
+                "precision": 0.6666666666666666
             },
             {
                 "intent": "Cancel",
                 "count": 7,
                 "k": 0,
-                "precision": 0.8571428571428571,
-                "stdDev": 0.3499271061118826
+                "precision": 0.8571428571428571
             },
             {
                 "intent": "Thanks",
                 "count": 8,
                 "k": 0,
-                "precision": 0.625,
-                "stdDev": 0.4841229182759271
+                "precision": 0.625
             },
             {
                 "intent": "Help",
                 "count": 8,
                 "k": 0,
-                "precision": 1,
-                "stdDev": 0
+                "precision": 1
             },
             {
                 "intent": "Customer_Care_Appointments",
                 "count": 20,
                 "k": 0,
-                "precision": 0.65,
-                "stdDev": 0.4769696007084729
+                "precision": 0.65
             },
             {
                 "intent": "Customer_Care_Store_Location",
                 "count": 25,
                 "k": 0,
-                "precision": 0.92,
-                "stdDev": 0.27129319932501067
+                "precision": 0.92
             },
             {
                 "intent": "General_Greetings",
                 "count": 30,
                 "k": 0,
-                "precision": 0.8333333333333334,
-                "stdDev": 0.3726779962499649
+                "precision": 0.8333333333333334
             },
             {
                 "intent": "General_Connect_to_Agent",
                 "count": 47,
                 "k": 0,
-                "precision": 0.9574468085106383,
-                "stdDev": 0.20184751022351366
+                "precision": 0.9574468085106383
             },
             {
                 "intent": "Customer_Care_Store_Hours",
                 "count": 48,
                 "k": 0,
-                "precision": 0.9375,
-                "stdDev": 0.24206145913796356
+                "precision": 0.9375
             }
         ],
         "pairwise_class_errors": [
