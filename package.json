@@ -1,6 +1,6 @@
 {
   "name": "marcao-wa-experiment",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Runs K-Fold cross validation on Watson Assistant Skill.",
   "main": "lib/index.js",
   "dependencies": {
@@ -19,7 +19,12 @@
   "bin": {
     "marcao-wa-experiment": "bin/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Watson",
+    "Watson Assistant",
+    "K-Fold",
+    "Cross-validation"
+  ],
+  "author": "macardoso95@gmail.com",
   "license": "ISC"
 }
