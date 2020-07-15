@@ -43,14 +43,14 @@ Output
 
 As a module:
 ```js
-const { Assistant } = require('marcao-wa-experiment')
+const Assistant = require('marcao-wa-experiment')
 const assistant = new Assistant({ 
   version: '2020-07-01', 
   apikey: 'YOUR_WATSON_ASSISTANT_API_KEY', 
   url: 'YOUR_WATSON_ASSISTANT_SERVICE_URL'
 })
 
-let results = await assistant.runExperiment('TARGET_WORKSPACE_ID', 3)
+let results = await assistant.runExperiment({ workspace_id: 'TARGET_WORKSPACE_ID' })
 ```
 
 ## Run tests
