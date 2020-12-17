@@ -16,7 +16,7 @@ let v1Mock = {
     getWorkspace: (options) => Promise.resolve({ result: { ...sampleWorkspace, status: 'Available' } }),
     createWorkspace: (options) => Promise.resolve({ result: sampleWorkspace }),
     deleteWorkspace: (options) => Promise.resolve({ result: {} }),
-    message: (options) => Promise.resolve({ result: { intents: sampleResults.predictions.find(p => p.input.text === options.input.text).output.map(o => ({ intent: o.class, confidence: o.confidence })) } })
+    message: (options) => Promise.resolve({ result: { context: { conversation_id: "foo_conversation_id" }, intents: (sampleResults.predictions.find(p => p.input.text === options.input.text) || { output: [] }).output.map(o => ({ intent: o.class, confidence: o.confidence })) } })
 }
 
 
