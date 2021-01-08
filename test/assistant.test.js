@@ -1,5 +1,5 @@
-const Assistant = require("../lib")
-const AssistantV1 = require("ibm-watson/assistant/v1")
+const Assistant = require('../lib')
+const AssistantV1 = require('ibm-watson/assistant/v1')
 
 let assistantOptions = {
     url: 'foo_url',
@@ -13,16 +13,11 @@ let assistantOptions = {
 let sampleWorkspace = require('./sample-workspace.json')
 let sampleResults = require('./sample-results.json')
 let v1Mock = {
-    getWorkspace: (options) => Promise.resolve({ result: { ...sampleWorkspace, status: 'Available' } }),
-    createWorkspace: (options) => Promise.resolve({ result: sampleWorkspace }),
-    deleteWorkspace: (options) => Promise.resolve({ result: {} }),
-    message: (options) => Promise.resolve({ result: { context: { conversation_id: "foo_conversation_id" }, intents: (sampleResults.predictions.find(p => p.input.text === options.input.text) || { output: [] }).output.map(o => ({ intent: o.class, confidence: o.confidence })) } })
+    getWorkspace: () => Promise.resolve({ result: { ...sampleWorkspace, status: 'Available' } }),
+    createWorkspace: () => Promise.resolve({ result: sampleWorkspace }),
+    deleteWorkspace: () => Promise.resolve({ result: {} }),
+    message: (options) => Promise.resolve({ result: { context: { conversation_id: 'foo_conversation_id' }, intents: (sampleResults.predictions.find(p => p.input.text === options.input.text) || { output: [] }).output.map(o => ({ intent: o.class, confidence: o.confidence })) } })
 }
-
-
-beforeEach(() => {
-    assistant = new Assistant(assistantOptions)
-})
 
 describe('Assistant', () => {
     describe('#constructor', () => {
@@ -50,6 +45,5 @@ describe('Assistant', () => {
                 })
         })
     })
-
 
 })

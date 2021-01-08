@@ -5,6 +5,12 @@ const commandLineUsage = require('command-line-usage')
 const Assistant = require('../lib')
 const fs = require('fs')
 
+async function main() {
+    const assistant = new Assistant({ ...options, VERBOSE: true })
+    let results = await assistant.runExperiment(options)
+    fs.writeFileSync(options.output, JSON.stringify(results, null, 4))
+}
+
 let args = [
     { name: 'help', alias: 'h', type: Boolean, defaultValue: false, description: 'Print usage instructions.' },
     { name: 'apikey', alias: 'a', type: String, description: 'Watson Assistant API Key.' },
@@ -26,14 +32,6 @@ if (options.help || (
     !options.workspace_id ||
     !options.url
 ))
-    return console.log(commandLineUsage(sections))
-
-
-async function main() {
-    const assistant = new Assistant({ ...options, VERBOSE: true })
-    let results = await assistant.runExperiment(options)
-    fs.writeFileSync(options.output, JSON.stringify(results, null, 4))
-}
-
-
-main()
+    console.log(commandLineUsage(sections))
+else
+    main()
