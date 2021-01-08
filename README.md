@@ -6,6 +6,9 @@
   <a href="#" target="_blank">
     <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
   </a>
+  <a href="https://codecov.io/gh/MarcoABCardoso/marcao-wa-experiment">
+    <img src="https://codecov.io/gh/MarcoABCardoso/marcao-wa-experiment/branch/master/graph/badge.svg?token=GJ3A65PUIQ"/>
+  </a>
 </p>
 
 > Runs K-Fold cross validation on Watson Assistant Skill.
