@@ -9,6 +9,9 @@
   <a href="https://codecov.io/gh/MarcoABCardoso/marcao-wa-experiment">
     <img src="https://codecov.io/gh/MarcoABCardoso/marcao-wa-experiment/branch/master/graph/badge.svg?token=GJ3A65PUIQ"/>
   </a>
+  <a href="#" target="_blank">
+    <img alt="Node.js CI" src="https://github.com/MarcoABCardoso/marcao-wa-experiment/workflows/Node.js%20CI/badge.svg" />
+  </a>
 </p>
 
 > Runs K-Fold cross validation on Watson Assistant Skill.
