@@ -19,6 +19,21 @@ let v1Mock = {
     message: (options) => Promise.resolve({ result: { context: { conversation_id: 'foo_conversation_id' }, intents: (sampleResults.predictions.find(p => p.input.text === options.input.text) || { output: [] }).output.map(o => ({ intent: o.class, confidence: o.confidence })) } })
 }
 
+function compareResults(r1, r2) {
+    for (let p1 of r1.predictions)
+        if (!r2.predictions.find(p2 => JSON.stringify(p2) === JSON.stringify(p1))) return false
+    for (let report in r1.reports)
+        for (let row1 of r1.reports[report])
+            if (report === 'pairwise_class_errors') {
+                let row2 = r2.reports[report].find(row2 => JSON.stringify({ ...row1, errors: undefined }) === JSON.stringify({ ...row2, errors: undefined }))
+                if (!row2) return false
+                for (let e1 of row1.errors)
+                    if (!row2.errors.find(e2 => JSON.stringify(e1) === JSON.stringify(e2))) return false
+            }
+            else if (!r2.reports[report].find(row2 => JSON.stringify(row1) === JSON.stringify(row2))) return false
+    return true
+}
+
 describe('Assistant', () => {
     describe('#constructor', () => {
         let assistant = new Assistant(assistantOptions)
@@ -40,7 +55,7 @@ describe('Assistant', () => {
             assistant.runExperiment({ workspace_id: 'foo_workspace_id' })
                 .catch(err => done.fail(err))
                 .then(results => {
-                    expect(results).toEqual(sampleResults)
+                    expect(compareResults(results, sampleResults)).toBe(true)
                     done()
                 })
         })
