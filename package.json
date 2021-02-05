@@ -1,6 +1,6 @@
 {
   "name": "marcao-wa-experiment",
-  "version": "1.2.6",
+  "version": "1.3.0",
   "description": "Runs K-Fold cross validation on Watson Assistant Skill.",
   "main": "lib/index.js",
   "dependencies": {
