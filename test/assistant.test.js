@@ -1,7 +1,7 @@
 const Assistant = require('../lib')
 const AssistantV1 = require('ibm-watson/assistant/v1')
 
-let assistantOptions = {
+let assistantOptions1 = {
     url: 'foo_url',
     apikey: 'foo_apikey',
     version: 'foo_version',
@@ -9,6 +9,13 @@ let assistantOptions = {
     THROTTLE: 1,
     POLLING_INTERVAL: 1,
     SEED: 1,
+}
+let assistantOptions2 = {
+    url: 'foo_url',
+    apikey: 'foo_apikey',
+    targetURL: 'foo_url_2',
+    targetApikey: 'foo_apikey_2',
+    version: 'foo_version',
 }
 let sampleWorkspace = require('./sample-workspace.json')
 let sampleResults = require('./sample-results.json')
@@ -36,22 +43,45 @@ function compareResults(r1, r2) {
 
 describe('Assistant', () => {
     describe('#constructor', () => {
-        let assistant = new Assistant(assistantOptions)
-        it('Creates an instance of Assistant', () => {
-            expect(assistant).toBeInstanceOf(Assistant)
+        describe('When no target credentials is passed', () => {
+            let assistant = new Assistant(assistantOptions1)
+            it('Creates an instance of Assistant using one instance', () => {
+                expect(assistant).toBeInstanceOf(Assistant)
+            })
+            it('Sets v1 to an instance of the Watson Assistant V1 SDK with the given parameters', () => {
+                expect(assistant.targetV1).toBeInstanceOf(AssistantV1)
+                expect(assistant.targetV1.baseOptions.url).toBe('foo_url')
+                expect(assistant.targetV1.baseOptions.version).toBe('foo_version')
+                expect(assistant.targetV1.authenticator.apikey).toBe('foo_apikey')
+                expect(assistant.v1).toBeInstanceOf(AssistantV1)
+                expect(assistant.v1.baseOptions.url).toBe('foo_url')
+                expect(assistant.v1.baseOptions.version).toBe('foo_version')
+                expect(assistant.v1.authenticator.apikey).toBe('foo_apikey')
+            })
         })
-        it('Sets v1 to an instance of the Watson Assistant V1 SDK with the given parameters', () => {
-            expect(assistant.v1).toBeInstanceOf(AssistantV1)
-            expect(assistant.v1.baseOptions.url).toBe('foo_url')
-            expect(assistant.v1.baseOptions.version).toBe('foo_version')
-            expect(assistant.v1.authenticator.apikey).toBe('foo_apikey')
+        describe('When target credentials is passed', () => {
+            let assistant = new Assistant(assistantOptions2)
+            it('Creates an instance of Assistant using a different instance for source and target', () => {
+                expect(assistant).toBeInstanceOf(Assistant)
+            })
+            it('Sets v1 to an instance of the Watson Assistant V1 SDK with the given parameters', () => {
+                expect(assistant.targetV1).toBeInstanceOf(AssistantV1)
+                expect(assistant.targetV1.baseOptions.url).toBe('foo_url_2')
+                expect(assistant.targetV1.baseOptions.version).toBe('foo_version')
+                expect(assistant.targetV1.authenticator.apikey).toBe('foo_apikey_2')
+                expect(assistant.v1).toBeInstanceOf(AssistantV1)
+                expect(assistant.v1.baseOptions.url).toBe('foo_url')
+                expect(assistant.v1.baseOptions.version).toBe('foo_version')
+                expect(assistant.v1.authenticator.apikey).toBe('foo_apikey')
+            })
         })
     })
 
     describe('#runExperiment', () => {
-        let assistant = new Assistant(assistantOptions)
+        let assistant = new Assistant(assistantOptions1)
         it('Executes K-fold experiment on a workspace', (done) => {
             assistant.v1 = v1Mock
+            assistant.targetV1 = v1Mock
             assistant.runExperiment({ workspace_id: 'foo_workspace_id' })
                 .catch(err => done.fail(err))
                 .then(results => {
