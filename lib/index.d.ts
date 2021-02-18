@@ -17,8 +17,10 @@ declare class Assistant {
 
 interface AssistantOptions {
     url: string
+    targetURL: string
     version: string
     apikey: string
+    targetApikey: string
     
     NUM_FOLDS?: Number
     VERBOSE?: Number
