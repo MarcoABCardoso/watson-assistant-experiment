@@ -1,6 +1,6 @@
 
 /**
- * @module marcao-kfold
+ * @module watson-assistant-experiment
  */
 
 declare class Assistant {

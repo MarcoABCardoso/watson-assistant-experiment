@@ -1,16 +1,16 @@
-<h1 align="center">marcao-wa-experiment</h1>
+<h1 align="center">watson-assistant-experiment</h1>
 <p>
-  <a href="https://www.npmjs.com/package/marcao-wa-experiment" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/marcao-wa-experiment.svg">
+  <a href="https://www.npmjs.com/package/watson-assistant-experiment" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/watson-assistant-experiment.svg">
   </a>
   <a href="#" target="_blank">
     <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
   </a>
-  <a href='https://coveralls.io/github/MarcoABCardoso/marcao-wa-experiment?branch=master'>
-    <img src='https://coveralls.io/repos/github/MarcoABCardoso/marcao-wa-experiment/badge.svg?branch=master' alt='Coverage Status' />
+  <a href='https://coveralls.io/github/MarcoABCardoso/watson-assistant-experiment?branch=master'>
+    <img src='https://coveralls.io/repos/github/MarcoABCardoso/watson-assistant-experiment/badge.svg?branch=master' alt='Coverage Status' />
   </a>
   <a href="#" target="_blank">
-    <img alt="Node.js CI" src="https://github.com/MarcoABCardoso/marcao-wa-experiment/workflows/Node.js%20CI/badge.svg" />
+    <img alt="Node.js CI" src="https://github.com/MarcoABCardoso/watson-assistant-experiment/workflows/Node.js%20CI/badge.svg" />
   </a>
 </p>
 
@@ -19,14 +19,14 @@
 ## Install
 
 ```sh
-npm install -g marcao-wa-experiment
+npm install -g watson-assistant-experiment
 ```
 
 ## Usage
 
 CLI:
 ```sh
-> marcao-wa-experiment
+> watson-assistant-experiment
 
 Marcão Experiment Script
 
@@ -49,7 +49,7 @@ Output
 
 As a module:
 ```js
-const Assistant = require('marcao-wa-experiment')
+const Assistant = require('watson-assistant-experiment')
 const assistant = new Assistant({ 
   version: '2020-07-01', 
   apikey: 'YOUR_WATSON_ASSISTANT_API_KEY', 
