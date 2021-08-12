@@ -6,9 +6,9 @@ let assistantOptions1 = {
     apikey: 'foo_apikey',
     version: 'foo_version',
 
-    THROTTLE: 1,
-    POLLING_INTERVAL: 1,
-    SEED: 1,
+    throttle: 1,
+    polling_interval: 1,
+    seed: 1,
 }
 let assistantOptions2 = {
     url: 'foo_url',
@@ -83,7 +83,7 @@ describe('Assistant', () => {
             assistant.v1 = v1Mock
             assistant.targetV1 = v1Mock
             assistant.runExperiment({ workspace_id: 'foo_workspace_id' })
-                .catch(err => done.fail(err))
+                .catch(err => console.log(err))
                 .then(results => {
                     expect(compareResults(results, sampleResults)).toBe(true)
                     done()
