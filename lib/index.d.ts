@@ -22,12 +22,14 @@ interface AssistantOptions {
     apikey: string
     targetApikey: string
     
-    NUM_FOLDS?: Number
-    VERBOSE?: Number
-    SEED?: Number
-    BATCH_SIZE?: Number
-    THROTTLE?: Number
-    POLLING_INTERVAL?: Number
+    num_folds?: Number
+    max_retries?: Number
+    verbose?: Number
+    seed?: Number
+    batch_size?: Number
+    throttle?: Number
+    polling_interval?: Number
+    polling_timeout?: Number
 }
 
 interface RunExperimentOptions {
@@ -46,6 +48,10 @@ interface ExperimentResults {
         output: Class[]
     }[]
     reports: {
+        overview: {
+            metric: string
+            value: number
+        }[]
         class_distribution: {
             class: string
             count: number
@@ -59,6 +65,8 @@ interface ExperimentResults {
             count: number
             k: number
             precision: number
+            recall: number
+            f1: number
         }[]
         pairwise_class_errors: {
             true_class: string
