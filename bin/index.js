@@ -21,7 +21,7 @@ let args = [
     { name: 'output', alias: 'o', type: String, defaultValue: 'results.json', description: 'Output file. Default: results.json' },
 ]
 const sections = [
-    { header: 'Marcão Experiment Script', content: 'Runs K-Fold cross validation on Watson Assistant Skill.' },
+    { header: 'Watson Assistant Experiment Script', content: 'Runs K-Fold cross validation on Watson Assistant Skill.' },
     { header: 'Options', optionList: args },
     { header: 'Output', content: 'Experiment results in JSON format' },
 ]

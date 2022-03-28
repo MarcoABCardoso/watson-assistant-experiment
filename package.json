@@ -8,7 +8,7 @@
     "command-line-usage": "^6.1.1",
     "group-by": "0.0.1",
     "ibm-watson": "^6.0.3",
-    "kfold-experiment": "^1.6.0"
+    "kfold-experiment": "^1.6.1"
   },
   "devDependencies": {
     "eslint": "^7.22.0",
